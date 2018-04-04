@@ -7,25 +7,22 @@ const RouteWithSubRoutes = (route) => (
     )}/>
 )
 
-const RouteConfig = () => (
+const App = () => (
     <Router>
-      <div>
-        <ul>
-          <li><Link to="/tacos/bus">Tacos</Link></li>
-          <li><Link to="/sandwiches">Sandwiches</Link></li>
-        </ul>
+        <div>
+            <ul>
+                <li><Link to="/tacos/bus">Tacos</Link></li>
+                <li><Link to="/sandwiches">Sandwiches</Link></li>
+            </ul>
 
-          {routes.map((route, i) => (
-              <RouteWithSubRoutes key={i} {...route}/>
-          ))}
-
-      </div>
+            {routes.map((route, i) => (
+                <RouteWithSubRoutes key={i} {...route}/>
+            ))}
+        </div>
     </Router>
 )
 
-export default RouteConfig
-
-
+export default App
 
 
 
