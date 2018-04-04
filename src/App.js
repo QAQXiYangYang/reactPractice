@@ -7,7 +7,7 @@ const RouteWithSubRoutes = (route) => (
     )}/>
 )
 
-const RouteConfigExample = () => (
+const RouteConfig = () => (
     <Router>
       <div>
         <ul>
@@ -18,17 +18,12 @@ const RouteConfigExample = () => (
           {routes.map((route, i) => (
               <RouteWithSubRoutes key={i} {...route}/>
           ))}
+
       </div>
-        <Route
-            path="messages/:id"
-            onEnter={
-                console.log(1)
-            }
-        />
     </Router>
 )
 
-export default RouteConfigExample
+export default RouteConfig
 
 
 
