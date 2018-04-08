@@ -62,22 +62,24 @@ function requireAuth(Layout, props) {
 
 let Router = process.env.NODE_ENV !== 'production' ? BrowserRouter : HashRouter;
 
-/*const RouteConfig  = () =>  (
+const RouteConfig  = () =>  (
     <Router history={history}>
         <Switch>
             <Route path="/" exact component={Index} />
-            {/!* <Route path="/home" component={props => requireAuth(Home, props)} />*!/}
+            {/* <Route path="/home" component={props => requireAuth(Home, props)} />*/}
             <Route path="/home" component={Home} />
             <Route path="/login" component={Login} />
             <Redirect from='' to="/" />
         </Switch>
     </Router>
-);*/
+);
+/*
 const RouteConfig = [
     { path: '/sandwiches',
         component: Home
     },
 ]
+*/
 
 
 export default RouteConfig;

@@ -15,9 +15,9 @@ const App = () => (
                 <li><Link to="/sandwiches">Sandwiches</Link></li>
             </ul>
 
-            {routes.map((route, i) => (
+          {/*  {routes.map((route, i) => (
                 <RouteWithSubRoutes key={i} {...route}/>
-            ))}
+            ))}*/}
         </div>
     </Router>
 )
