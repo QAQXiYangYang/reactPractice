@@ -1,6 +1,5 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import routes from "./router"
 const RouteWithSubRoutes = (route) => (
     <Route path={route.path} render={props => (
         <route.component {...props} routes={route.routes}/>
@@ -15,6 +14,8 @@ const App = () => (
                 <li><Link to="/sandwiches">Sandwiches</Link></li>
             </ul>
 
+            132132131
+            132132131
           {/*  {routes.map((route, i) => (
                 <RouteWithSubRoutes key={i} {...route}/>
             ))}*/}

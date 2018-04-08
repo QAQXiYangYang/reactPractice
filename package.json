@@ -44,6 +44,7 @@
     "react-router-dom": "^4.2.2",
     "react-swipeable-views": "^0.12.12",
     "redux": "^3.7.2",
+    "replace": "^0.3.0",
     "reshake": "^1.0.7",
     "style-loader": "0.19.0",
     "styled-components": "^2.4.0",
@@ -103,5 +104,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "homepage": "."
 }
