@@ -1,5 +1,5 @@
 'use strict';
-
+//path 模块提供了一些工具函数，用于处理文件与目录的路径。
 const path = require('path');
 const fs = require('fs');
 const url = require('url');
@@ -52,4 +52,5 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+
 };
