@@ -1,18 +1,43 @@
-@import '~antd/dist/antd.css';
-#components-layout-demo-custom-trigger .trigger {
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: color .3s;
+*{
+  margin: 0;
+  padding: 0;
+}
+.transitionWrapper-enter {
+  left: 100%;
+  transition: left 300ms ease-in;
 }
 
-#components-layout-demo-custom-trigger .trigger:hover {
-  color: #1890ff;
+.transitionWrapper-enter.transitionWrapper-enter-active {
+  left: 0;
 }
 
-#components-layout-demo-custom-trigger .logo {
-  height: 32px;
-  background: rgba(255,255,255,.2);
-  margin: 16px;
+.transitionWrapper-leave{
+  left : 0;
+  transition: left 300ms ease-in;
+}
+
+.transitionWrapper-leave.transitionWrapper-leave-active {
+  left : -100%;
+}
+
+.transitionWrapper {
+  position: relative;
+}
+
+
+.toast-notification{
+  top : 46%;
+  opacity: 0;
+
+}
+.toast-notification-span{
+  background-color: #5f5f5f;
+  background: #5f5f5f;
+  opacity: 0.9;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  border-radius: px2rem(30px);
+  padding: px2rem(10px) px2rem(30px);
+  color: #ffffff;
 }

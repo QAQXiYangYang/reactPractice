@@ -1,30 +1,66 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-const RouteWithSubRoutes = (route) => (
-    <Route path={route.path} render={props => (
-        <route.component {...props} routes={route.routes}/>
-    )}/>
-)
+import "./App.css"
+import CSSTransitionGroup from 'react-addons-css-transition-group'
+const routes = [
+    { path: '/',
+        exact: true,
+        sidebar: () => <div>home!</div>,
+        main: () => <h2>Home</h2>
+    },
+    { path: '/bubblegum',
+        sidebar: () => <div>bubblegum!</div>,
+        main: () => <h2>Bubblegum</h2>
+    },
+    { path: '/shoelaces',
+        sidebar: () => <div>shoelaces!</div>,
+        main: () => <h2>Shoelaces</h2>
+    }
+]
 
-const App = () => (
+const SidebarExample = () => (
     <Router>
-        <div>
-            <ul>
-                <li><Link to="/tacos/bus">Tacos</Link></li>
-                <li><Link to="/sandwiches">Sandwiches</Link></li>
-            </ul>
+        <div style={{ display: 'flex' }}>
+            <div style={{
+                padding: '10px',
+                width: '40%',
+                background: '#f0f0f0'
+            }}>
+                <ul style={{ listStyleType: 'none', padding: 0 }}>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/bubblegum">Bubblegum</Link></li>
+                    <li><Link to="/shoelaces">Shoelaces</Link></li>
+                </ul>
+                <ReactCSSTransitionGroup
+                    transitionName="fade"
+                    transitionEnterTimeout={300}
+                    transitionLeaveTimeout={300}
+                >
+                    {routes.map((route, index) => (
+                        <Route
+                            key={index}
+                            path={route.path}
+                            exact={route.exact}
+                            component={route.sidebar}
+                        />
+                    ))}
+                </ReactCSSTransitionGroup>
+            </div>
 
-            1
-            1
-          {/*  {routes.map((route, i) => (
-                <RouteWithSubRoutes key={i} {...route}/>
-            ))}*/}
+            <div style={{ flex: 1, padding: '10px' }}>
+                {routes.map((route, index) => (
+                    // Render more <Route>s with the same paths as
+                    // above, but different components this time.
+                    <Route
+                        key={index}
+                        path={route.path}
+                        exact={route.exact}
+                        component={route.main}
+                    />
+                ))}
+            </div>
         </div>
     </Router>
 )
 
-export default App
-
-
-
-
+export default SidebarExample
