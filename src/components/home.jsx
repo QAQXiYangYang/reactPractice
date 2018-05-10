@@ -5,10 +5,9 @@ class App extends Component {
   render() {
     return (
       <div>
-     home
 
+         home
         <img src={require('./cash.png')} />
-
       </div>
     );
   }

@@ -5,26 +5,22 @@
 .transitionWrapper-enter {
   left: 100%;
   transition: left 300ms ease-in;
+  background-color: red;
 }
 
 .transitionWrapper-enter.transitionWrapper-enter-active {
   left: 0;
 }
-
 .transitionWrapper-leave{
   left : 0;
   transition: left 300ms ease-in;
 }
-
 .transitionWrapper-leave.transitionWrapper-leave-active {
   left : -100%;
 }
-
 .transitionWrapper {
   position: relative;
 }
-
-
 .toast-notification{
   top : 46%;
   opacity: 0;
