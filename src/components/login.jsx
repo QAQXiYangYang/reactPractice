@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, {Component} from "react";
+import styled from "styled-components";
 
 const Title = styled.h1`
   color: palevioletred;
   font-size: 1.5em;
   text-align: center;
-`;
+`
 const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
-`;
+`
 
 const Input = styled.input`
   padding: 0.5em;
@@ -18,7 +18,7 @@ const Input = styled.input`
   background: papayawhip;
   border: none;
   border-radius: 3px;
-`;
+`
 const Button = styled.button`
   /* Adapt the colours based on primary prop */
   background: ${props => props.primary ? 'palevioletred' : 'white'};
@@ -29,17 +29,16 @@ const Button = styled.button`
   padding: 0.25em 1em;
   border: 2px solid palevioletred;
   border-radius: 3px;
-`;
-
+`
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <div>
      login
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
