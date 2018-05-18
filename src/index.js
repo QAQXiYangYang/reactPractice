@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import { Router, Route, HashRouter, IndexRoute} from 'react-router'
 import './index.css'
 import App from './App'
-import Home from './components/home'
 import registerServiceWorker from './registerServiceWorker'
 ReactDOM.render(
         <App />
