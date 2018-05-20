@@ -9,15 +9,15 @@ import {
 import Loadable from 'react-loadable';
 import Loading from './components/home';
 
-
+import Home1 from "./components/home"
+import login from "./components/login"
 const LoadableComponent = Loadable({
   loader: () => import('./components/login'),
   loading: Loading,
 });
 
 
-import Home1 from "./components/home"
-import login from "./components/login"
+
 // let Home1 = generatePageFunction("./components/home");
 /*const routes = (
 
