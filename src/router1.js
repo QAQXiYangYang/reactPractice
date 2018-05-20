@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {
     BrowserRouter as Router,
     Route,
-    Link
+    Link,
 } from 'react-router-dom'
 
 
@@ -19,23 +19,24 @@ const LoadableComponent = Loadable({
 import Home1 from "./components/home"
 import login from "./components/login"
 // let Home1 = generatePageFunction("./components/home");
-const routes = [
-  {
-    path: '/',
-    exact: true,
-    sidebar: () => <div>App!</div>,
-    component: LoadableComponent
-  },
-  {
-    path: '/bubblegum',
-    sidebar: () => <div>bubblegum!</div>,
-    component:LoadableComponent
-  },
-  {
-    path: '/shoelaces',
-    sidebar: () => <div>shoelaces!</div>,
-    component: LoadableComponent
+/*const routes = (
+
+    <Route path="/" component={Loading}>
+      <Route path="/repos" component={Loading}/>
+      <Route path="/about" component={Loading}/>
+    </Route>
+
+
+)*/
+ class routes extends React.Component {
+  render() {
+    return
+    <Route path="/" component={Loading}>
+      <Route path="/repos" component={Loading}/>
+      <Route path="/about" component={Loading}/>
+    </Route>
   }
-]
+}
+
 
 export default routes

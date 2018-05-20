@@ -2,6 +2,16 @@
   margin: 0;
   padding: 0;
 }
+
+
+/*网易严选设计规范*/
+/*
+
+#b71c1c
+#cbb779
+
+*/
+
 .transitionWrapper-enter {
   left: 100%;
   transition: left 300ms ease-in;
