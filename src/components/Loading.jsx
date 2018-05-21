@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default function MyLoadingComponent({ error, pastDelay }) {
+export default function LoadingComponent({ error, pastDelay }) {
   if (error) {
     return <div>Error!</div>;
   } else if (pastDelay) {

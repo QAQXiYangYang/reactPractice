@@ -64,7 +64,9 @@
     "fixcode": "standard --fix"
   },
   "devDependencies": {
+    "node-sass": "^4.9.0",
     "redux-devtools": "^3.4.1",
+    "sass-loader": "^7.0.1",
     "standard": "^11.0.1"
   },
   "jest": {

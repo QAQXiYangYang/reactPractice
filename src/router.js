@@ -1,24 +1,26 @@
 import React, {Component} from "react";
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-} from 'react-router-dom'
-
-
 import Loadable from 'react-loadable';
-import Loading from './components/home';
+import LoadingComponent from './components/Loading';
 
 
 const LoadableComponent = Loadable({
+  loader: () => import('./components/home'),
+  loading: LoadingComponent,
+});
+const HomeComponent = Loadable({
   loader: () => import('./components/login'),
-  loading: Loading,
+  loading: LoadingComponent,
+});
+/*
+const Component = Loadable({
+  loader: () => import('./components/login'),
+  loading: LoadingComponent,
 });
 
 
-import Home1 from "./components/home"
-import login from "./components/login"
-// let Home1 = generatePageFunction("./components/home");
+
+*/
+
 const routes = [
   {
     path: '/',
