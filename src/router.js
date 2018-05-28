@@ -31,7 +31,7 @@ const routes = [
   {
     path: '/bubblegum',
     sidebar: () => <div>bubblegum!</div>,
-    component:LoadableComponent
+    component:HomeComponent
   },
   {
     path: '/shoelaces',
