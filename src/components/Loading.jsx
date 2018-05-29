@@ -1,12 +1,11 @@
-import React, {Component} from "react";
+import React, {Component} from 'react'
 
-export default function LoadingComponent({ error, pastDelay }) {
+export default function LoadingComponent ({ error, pastDelay }) {
   if (error) {
-    return <div>Error!</div>;
+    return <div>Error!</div>
   } else if (pastDelay) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   } else {
-    return null;
+    return null
   }
 }
-

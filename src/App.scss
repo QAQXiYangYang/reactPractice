@@ -2,11 +2,35 @@
   margin: 0;
   padding: 0;
 }
-
+a{
+  text-decoration:none;
+}
+html,body,#root{
+  width: 100%;
+  height: 100%;
+}
+.app_page{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f0ea;
+}
+.aa{
+  color: tomato;
+}
+.app_sidebar{
+  flex:2;
+  background-color: #ffffff;
+}
+.app_content{
+  flex:8;
+}
 
 /*网易严选设计规范*/
 /*
-
+文字 #333  #999 灰色 #b4a078
+背景 黑 b3a07d
+边框 b3a07d
 #b71c1c
 #cbb779
 

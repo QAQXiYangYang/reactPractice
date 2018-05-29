@@ -1,53 +1,45 @@
-import React, {Component} from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import routes from './router'
-import Loadable from 'react-loadable';
-import Loading from './components/home';
-
-
-const SidebarExample = () => (
+import './App.scss'
+const AppPage = () => (
   <Router>
-    <div style={{ display: "flex" }}>
-      <div
-          style={{
-              padding: "10px",
-              width: "40%",
-              background: "#f0f0f0"
-          }}
-      >
-        <ul style={{ listStyleType: "none", padding: 0 }}>
+    <div className='app_page'>
+      <div className='app_sidebar'>
+        <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to='/' activeClassName='aa'>Home</NavLink >
           </li>
           <li>
-            <Link to="/bubblegum">Bubblegum</Link>
+            <NavLink to='/bubblegum' activeClassName='aa'>Bubblegum</NavLink >
           </li>
           <li>
-            <Link to="/shoelaces">Shoelaces</Link>
+            <NavLink to='/shoelaces' activeClassName='aa'>Shoelaces</NavLink >
           </li>
         </ul>
-
-          {routes.map((route, index) => (
-              <Route
-                  key={index}
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.sidebar}
-              />
-          ))}
       </div>
-    <div style={{ flex: 1, padding: "10px" }}>
-      {routes.map((route, index) => (
-          <Route
+      <div className='app_content'>
+        <div className='app_crumbsBar'>
+          {routes.map((route, index) => (
+            <Route
               key={index}
               path={route.path}
               exact={route.exact}
-              component={route.component}
+              component={route.sidebar}
+            />
+          ))}
+        </div>
+        {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.component}
           />
-      ))}
-    </div>
+        ))}
+      </div>
     </div>
   </Router>
-);
+)
 
-export default SidebarExample;
+export default AppPage
