@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink, Redirect} from 'react-router-dom'
 import routes from './router'
 import './App.scss'
 const AppPage = () => (
@@ -8,13 +8,13 @@ const AppPage = () => (
       <div className='app_sidebar'>
         <ul>
           <li>
-            <NavLink to='/' activeClassName='aa'>Home</NavLink >
+            <NavLink to='/home' activeClassName='sidebarItem_a'>Home</NavLink >
           </li>
           <li>
-            <NavLink to='/bubblegum' activeClassName='aa'>Bubblegum</NavLink >
+            <NavLink to='/bubblegum' activeClassName='sidebarItem_a'>Bubblegum</NavLink >
           </li>
           <li>
-            <NavLink to='/shoelaces' activeClassName='aa'>Shoelaces</NavLink >
+            <NavLink to='/shoelaces' activeClassName='sidebarItem_a'>Shoelaces</NavLink >
           </li>
         </ul>
       </div>
