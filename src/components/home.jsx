@@ -1,27 +1,51 @@
-import React, {Component} from 'react'
-import TweenOne, { TweenOneGroup } from 'rc-tween-one';
-import ticker from 'rc-tween-one/lib/ticker';
-import Input from 'antd/lib/input';
-import Button from 'antd/lib/button';
-import InputNumber from 'antd/lib/input-number';
-import Radio from 'antd/lib/radio';
-import Icon from 'antd/lib/icon';
-import { enquireScreen } from 'enquire-js';
-import PropTypes from 'prop-types';
-import './home.scss'
-class App extends Component {
+import React from 'react'
+import { connect } from 'react-redux'
+import { addTodo } from '../actions'
 
-  render () {
-    return (
-      <div>
-        <div className='text'>
-          home
-        </div>
+const Todo = ({ onClick, completed, text }) => (
+  <li
+    onClick={onClick}
+    style={{
+      textDecoration: completed ? 'line-through' : 'none'
+    }}
+  >
+    {text}
+  </li>
+)
 
-        <img src={require('./cash.png')} />
-      </div>
-    )
-  }
+const TodoList = ({ todos, toggleTodo }) => (
+  <ul>
+    {todos.map(todo =>
+      <Todo
+        key={todo.id}
+        {...todo}
+      />
+    )}
+  </ul>
+)
+
+const AddTodo = ({ dispatch }) => {
+  let input
+
+  return (
+    <div>
+      <form onSubmit={e => {
+        e.preventDefault()
+        if (!input.value.trim()) {
+          return
+        }
+        dispatch(addTodo(input.value))
+        input.value = ''
+      }}>
+        <input ref={node => input = node} />
+        <button type="submit">
+          加一条数据
+        </button>
+      </form>
+
+      {TodoList}
+    </div>
+  )
 }
 
-export default App
+export default connect()(AddTodo)

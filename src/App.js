@@ -14,6 +14,7 @@ const AppPage = () => (
             <NavLink to='/bubblegum' activeClassName='sidebarItem_a'>Bubblegum</NavLink >
           </li>
           <li>
+            1
             <NavLink to='/shoelaces' activeClassName='sidebarItem_a'>Shoelaces</NavLink >
           </li>
         </ul>
