@@ -1,42 +1,43 @@
-import React, {Component} from "react";
-import Loadable from 'react-loadable';
-import LoadingComponent from './components/Loading';
+import React, {Component} from "react"
+import Loadable from 'react-loadable'
+import LoadingComponent from './components/Loading'
 
-
-const LoadableComponent = Loadable({
+const HomeComponent = Loadable({
   loader: () => import('./components/home'),
   loading: LoadingComponent,
-});
-const HomeComponent = Loadable({
+})
+const Home1Component = Loadable({
   loader: () => import('./components/login'),
   loading: LoadingComponent,
-});
-/*
-const Component = Loadable({
-  loader: () => import('./components/login'),
+})
+const DefalutComponent = Loadable({
+  loader: () => import('./components/defalut'),
   loading: LoadingComponent,
-});
-
-
-
-*/
+})
 
 const routes = [
   {
     path: '/',
     exact: true,
-    sidebar: () => <div>App!</div>,
-    component: LoadableComponent
+    sidebar: () => <div>
+      点击左边导航栏开始react
+    </div>,
+    component: DefalutComponent
   },
   {
-    path: '/bubblegum',
-    sidebar: () => <div>bubblegum!</div>,
+    path: '/home',
+    sidebar: () => <div>1</div>,
     component:HomeComponent
   },
   {
+    path: '/bubblegum',
+    sidebar: () => <div>2</div>,
+    component:Home1Component
+  },
+  {
     path: '/shoelaces',
-    sidebar: () => <div>shoelaces!</div>,
-    component: LoadableComponent
+    sidebar: () => <div>3</div>,
+    component: Home1Component
   }
 ]
 
