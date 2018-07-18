@@ -47,6 +47,7 @@
     "react-swipeable-views": "^0.12.12",
     "react-transition-group": "^2.3.0",
     "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
     "replace": "^0.3.0",
     "reshake": "^1.0.7",
     "style-loader": "0.19.0",
@@ -67,6 +68,7 @@
   "devDependencies": {
     "node-sass": "^4.9.0",
     "redux-devtools": "^3.4.1",
+    "redux-devtools-extension": "^2.13.5",
     "sass-loader": "^7.0.1",
     "standard": "^11.0.1"
   },

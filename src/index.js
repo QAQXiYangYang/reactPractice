@@ -1,12 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import themeReducer from './reducers/index'
+
 import './index.css'
+import {createLogger} from 'redux-logger'
 import App from './App'
+
+
 import registerServiceWorker from './registerServiceWorker'
-let store = createStore(themeReducer)
+import store from './store/store'
+// 使用日志打印方法， collapsed让action折叠，看着舒服。
+const loggerMiddleware = createLogger({collapsed: true});
 ReactDOM.render(
   <Provider store={store}>
     <App />
