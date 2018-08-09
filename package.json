@@ -114,5 +114,13 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "."
+  "homepage": ".",
+  "proxy": {
+    "/v2/movie/in_theaters": {
+      "target": "https://api.douban.com",
+      "changeOrigin":true,
+      "secure":false
+
+    }
+  }
 }
