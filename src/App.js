@@ -11,7 +11,13 @@ class appPage extends Component {
     }
   }
   getRandomColor () {
-    return 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 10) + ')'
+    //随机在数组取值
+    const bgcColor =['#C2FFD8','#465EFB','#F97794','#92FFC0','#002661','#F0FF00','#FFA8A8']
+    // 随机颜色
+     function  randomColor(){
+       return bgcColor[Math.floor(Math.random()*bgcColor.length)]
+    }
+    return `linear-gradient(to bottom right, ${randomColor()} , ${randomColor()})`
   }
 
   render () {
@@ -31,15 +37,15 @@ class appPage extends Component {
                <NavLink to='/shoelaces' activeClassName='sidebarItem_a'>Shoelaces</NavLink >
              </li>
              <button
-               style={{color: this.props.themeColor, marginLeft: '50px'}}
+               style={{marginLeft: '50px'}}
                onClick={() => {
                  this.handleSwitchColor(this.getRandomColor())
                }}
-             >Yellow
+             >换色
              </button>
            </ul>
          </div>
-         <div className='app_content'>
+         <div className='app_content' style={{background: this.props.themeColor}}>
            <div className='app_crumbsBar'>
              {routes.map((route, index) => (
                <Route

@@ -1,9 +1,9 @@
 import React, {Component} from "react"
 import Loadable from 'react-loadable'
-import LoadingComponent from './components/Loading'
+import LoadingComponent from './components/loading/index'
 
 const HomeComponent = Loadable({
-  loader: () => import('./components/home'),
+  loader: () => import('./components/home/index'),
   loading: LoadingComponent,
 })
 const Home1Component = Loadable({
