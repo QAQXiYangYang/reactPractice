@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-
+import { connect } from 'react-redux'
 const Title = styled.h1`
   color: palevioletred;
   font-size: 1.5em;
@@ -31,14 +31,18 @@ const Button = styled.button`
   border-radius: 3px;
 `
 
-class App extends Component {
+class Appp extends Component {
   render () {
     return (
-      <div>
+      <div style={{color: this.props.themeColor}}>
      login
       </div>
     )
   }
 }
+const mapStateToProps = (state) => {
+  return {themeColor: state.themeColor}
+}
+Appp = connect(mapStateToProps)(Appp)
 
-export default App
+export default Appp

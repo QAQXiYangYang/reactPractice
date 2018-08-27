@@ -19,9 +19,7 @@ const routes = [
   {
     path: '/',
     exact: true,
-    sidebar: () => <div>
-      点击左边导航栏开始react
-    </div>,
+    sidebar: () => <div>点击左边导航栏开始react</div>,
     component: DefalutComponent
   },
   {
