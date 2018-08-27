@@ -1,4 +1,4 @@
-const themeReducer = (state={themeColor: 'yellow'}, action) => {
+const themeReducer = (state = {themeColor: ''}, action) => {
   switch (action.type) {
     case 'CHANGE_COLOR':
       return {themeColor: action.themeColor}
