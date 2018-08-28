@@ -1,9 +1,6 @@
-const themeReducer = (state={themeColor: 'yellow'}, action) => {
-  switch (action.type) {
-    case 'CHANGE_COLOR':
-      return {themeColor: action.themeColor}
-    default:
-      return state // 没有修改，返回原来的对象
-  }
-}
-export default themeReducer
+import { combineReducers } from 'redux';
+
+import themeColor from './themeColor';
+export default combineReducers({
+  themeColor
+});
