@@ -26,7 +26,8 @@ standard：在webstorm 配置中讲eslint 指向 node_modules\standard
 
 >LogRocket is a production Redux logging tool that lets you replay problems as if they happened in your own browser. Instead of guessing why errors happen, or asking users for screenshots and log dumps, LogRocket lets you replay Redux actions + state, network requests, console logs, and see a video of what the user saw
 
-
+storybook
+(https://blog.csdn.net/qq_30604453/article/details/78215158?locationNum=10&fps=1)
 ----------
 
 
