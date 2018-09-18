@@ -2,40 +2,34 @@ import React, {Component} from "react"
 import Loadable from 'react-loadable'
 import LoadingComponent from './components/loading/index'
 
-const HomeComponent = Loadable({
-  loader: () => import('./components/home/index'),
-  loading: LoadingComponent,
-})
-const Home1Component = Loadable({
-  loader: () => import('./components/login'),
-  loading: LoadingComponent,
-})
-const DefalutComponent = Loadable({
-  loader: () => import('./components/defalut'),
-  loading: LoadingComponent,
-})
+function _loader (src) {
+  Loadable({
+    loader: () => import(src),
+    loading: LoadingComponent,
+  })
+}
 
 const routes = [
   {
     path: '/',
     exact: true,
     sidebar: () => <div>点击左边导航栏开始react</div>,
-    component: DefalutComponent
+    component: _loader('./components/defalut')
   },
   {
     path: '/home',
     sidebar: () => <div>1</div>,
-    component:HomeComponent
+    component:_loader('./components/home/index')
   },
   {
     path: '/bubblegum',
     sidebar: () => <div>2</div>,
-    component:Home1Component
+    component:_loader('./components/login')
   },
   {
     path: '/shoelaces',
     sidebar: () => <div>3</div>,
-    component: Home1Component
+    component:_loader('./components/login')
   }
 ]
 
