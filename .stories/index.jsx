@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 
 import Welcome from './welcome';
 
-const name = "Linda";
+const name = "red";
 storiesOf('storybook', module)
   .add('Welcome', () =>(
     <Welcome name={name}/>

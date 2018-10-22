@@ -1,8 +1,14 @@
-import React, {Component} from 'react'
-export default class TEXT extends Component {
-  render () {
+import React, { Component } from 'react';
+import simpleHoc from './wrapper';
+
+class Usual extends Component {
+  render() {
+    console.log(this.props, 'props');
     return (
-      <div>1</div>
+      <div className="ada">
+        Usual
+      </div>
     )
   }
 }
+export default simpleHoc(Usual);

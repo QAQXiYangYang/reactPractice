@@ -3,8 +3,10 @@ import rootReducer from '../reducers/themeColor'
 //import rootReducer from '../reducers/index'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import logger from 'redux-logger'
-let store = createStore(rootReducer, composeWithDevTools())
-//let store = createStore(themeReducer,  applyMiddleware(logger))
+// redux-devtool
+//let store = createStore(rootReducer, composeWithDevTools())
+//redux-logger
+let store = createStore(rootReducer,  applyMiddleware(logger))
 export default store
 
 
