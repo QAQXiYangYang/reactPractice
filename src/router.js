@@ -2,47 +2,27 @@ import React from "react"
 import Loadable from 'react-loadable'
 import LoadingComponent from './components/loading/index'
 import Wrapper from './components/wrapper'
+import Untils from './untils'
 
+/**
+ *
+ * @param options {loader: () => import('')}
+ * @loading loading 组件
+ * @returns {*}
+ */
 const asyncComponent = (options) => {
   return Loadable({
-    loading: (props) => {
-      if (props.error) {
-        console.error(props.error);
-      }
-      return null;
-    },
+    loading: LoadingComponent,
     render: (loaded, props) => {
       const Component = loaded.default;
+      // 引入高阶组件
       const WrappedComponent = Wrapper(Component);
-      return <WrappedComponent {...props} />;
+      return <WrappedComponent {...props}  />;
     },
     ...options
   });
 };
-
-
-const _Loadable = function (src) {
-  src=  Loadable({
-   loader: () => import(src),
-   loading: LoadingComponent,
- })
-}
-const A = Loadable({
-  loader: () => import('./components/home/index'),
-  loading: LoadingComponent,
-})
-const B = Loadable({
-  loader: () => import('./components/defalut'),
-  loading: LoadingComponent,
-})
-const C = Loadable({
-    loader: () => import('./components/test'),
-  /*loader: () =>  Loadable({
-    loader: () => import('./components/login'),
-    loading: LoadingComponent,
-  }),*/
-  loading: LoadingComponent,
-})
+console.log(Untils)
 const routes = [
   {
     path: '/',
@@ -50,25 +30,31 @@ const routes = [
     sidebar: () => <div>
       点击左边导航栏开始react
     </div>,
-    component: _Loadable('./components/defalut')
+    component: asyncComponent({
+      loader: () => import('./components/defalut')
+    })
   },
   {
     path: '/home',
     sidebar: () => <div>1</div>,
-    component: A
+    component: asyncComponent({
+      loader: () => import('./components/defalut')
+    })
+
   },
   {
     path: '/bubblegum',
     sidebar: () => <div>2</div>,
-    component: Loadable({
-      loader: () => import('./components/home/index'),
-      loading: B,
+    component: asyncComponent({
+      loader: () => import('./components/home/index')
     })
   },
   {
     path: '/shoelaces',
     sidebar: () => <div>3</div>,
-    component: C
+    component: asyncComponent({
+      loader: () => import('./components/test')
+    })
   }
 ]
 

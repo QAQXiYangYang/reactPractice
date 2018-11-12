@@ -76,7 +76,6 @@ export default class Turntable {
     context.arc(150, 150, 30, 0, Math.PI * 2, false)
     context.fill()
     context.restore()
-
     context.save()
     context.beginPath()
     context.fillStyle = '#FFF'
@@ -144,13 +143,13 @@ export default class Turntable {
   }
   distanceToStop() {
     let middleDegrees = 0, distance = 0
-    const awardsToDegreesList = this.awards.map((data, index) => {
+   /* const awardsToDegreesList = this.awards.map((data, index) => {
       let awardRadian = (Math.PI * 2) / this.awards.length
       return awardRadian * index + (awardRadian * (index + 1) - awardRadian * index) / 2
     });
     const currentPrizeIndex = Math.floor(Math.random() * this.awards.length)
     console.log('当前奖品应该中的奖品是：'+this.awards[currentPrizeIndex].name)
-    middleDegrees = awardsToDegreesList[currentPrizeIndex];
+    middleDegrees = awardsToDegreesList[currentPrizeIndex];*/
     distance = Math.PI * 3 / 2 - middleDegrees
     distance = distance > 0 ? distance : Math.PI * 2 + distance
     return distance + Math.PI * 10;

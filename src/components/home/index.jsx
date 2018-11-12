@@ -6,6 +6,7 @@ class Index extends Component {
   constructor (props){
     super(props)
     this.canvas = React.createRef()
+    this.div = React.createRef()
   }
   componentDidMount(){
     // canvas元素保存在this.canvas的current属性中
@@ -23,7 +24,7 @@ class Index extends Component {
 
   render () {
     return (
-      <div >
+      <div  ref={this.div}>
         <canvas
           ref={this.canvas}
           style={{

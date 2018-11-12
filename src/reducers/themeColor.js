@@ -1,6 +1,5 @@
-let defaultState = "linear-gradient(to bottom right, #F97794 , #F0FF00)"
-
-const themeReducer = (state=defaultState, action) => {
+import Untils from '../untils'
+const themeReducer = (state=Untils.getRandomColor(), action) => {
   switch (action.type) {
     case 'CHANGE_COLOR':
       return {themeColor: action.themeColor}

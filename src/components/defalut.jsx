@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 // import { addTodo } from '../actions'
 import axios from 'axios'
+import simpleHoc from './wrapper'
 class Home extends Component {
     go =()=>{
         axios.get('/v2/movie/in_theaters').then((res)=>{
@@ -19,4 +20,4 @@ class Home extends Component {
     )
   }
 }
-export default Home
+export default Home;

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, NavLink, Redirect} from 'react-router-dom'
 import routes from './router'
+import until from '././untils'
 import './App.scss'
 
 class appPage extends Component {
@@ -9,14 +10,6 @@ class appPage extends Component {
     if (this.props.onSwitchColor) {
       this.props.onSwitchColor(color)
     }
-  }
-  getRandomColor () {
-    //随机在数组取颜色
-    const bgcColor =['#C2FFD8','#465EFB','#F97794','#92FFC0','#002661','#F0FF00','#FFA8A8']
-     function  randomColor(){
-       return bgcColor[Math.floor(Math.random()*bgcColor.length)]
-    }
-    return `linear-gradient(to bottom right, ${randomColor()} , ${randomColor()})`
   }
   render () {
     return (
@@ -37,7 +30,7 @@ class appPage extends Component {
              <button
                style={{marginLeft: '50px'}}
                onClick={() => {
-                 this.handleSwitchColor(this.getRandomColor())
+                 this.handleSwitchColor(until.getRandomColor())
                }}
              >换色
              </button>

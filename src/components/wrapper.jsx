@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 
-const simpleHoc = WrappedComponent => {
-  console.log('simpleHoc');
+const Wrapper = WrappedComponent => {
+  // console.log('simpleHoc');
   return class extends Component {
     render() {
+      console.log('高阶组件')
+      const a = {
+        a: 'a'
+      }
       return <div className='1'>
-        <WrappedComponent {...this.props} />
+        <WrappedComponent {...this.props} {...a} />
       </div>
     }
   }
 }
-export default simpleHoc;
+export default Wrapper;
