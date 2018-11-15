@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-// import { addTodo } from '../actions'
 import axios from 'axios'
 import simpleHoc from './wrapper'
 class Home extends Component {
-    go =()=>{
+    go = ()=>{
         axios.get('/v2/movie/in_theaters').then((res)=>{
             console.log(res.data);
         }).catch((err)=>{
