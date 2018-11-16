@@ -20,7 +20,7 @@ class errorPage extends Component {
           fixed={true}
           fixedStop={false}
           freez={true}>
-          <h1>404</h1>
+          <div className= 'wrapper'>404</div>
         </Shake>
       </div>
     )
