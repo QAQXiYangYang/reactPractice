@@ -1,7 +1,5 @@
 import React from "react"
 import Untils from './untils'
-
-console.log(Untils)
 const routes = [
   {
     path: '/',
@@ -33,6 +31,13 @@ const routes = [
     sidebar: () => <div>3</div>,
     component: Untils.asyncComponent({
       loader: () => import('./components/test')
+    })
+  },
+  {
+    path: '/',
+    sidebar: '',
+    component: Untils.asyncComponent({
+      loader: () => import('./components/404')
     })
   }
 ]

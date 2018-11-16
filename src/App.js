@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, NavLink, Redirect} from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink, Redirect, Switch} from 'react-router-dom'
 import routes from './router'
 import until from '././untils'
 import './App.scss'
@@ -13,50 +13,51 @@ class appPage extends Component {
   }
   render () {
     return (
-       <Router>
-         <div className='app_page'>
-         <div className='app_sidebar'>
-           <ul>
-             <li>
-               <NavLink to='/home' activeClassName='sidebarItem_a'>Home</NavLink >
-             </li>
-             <li>
-               <NavLink to='/bubblegum' activeClassName='sidebarItem_a'>Bubblegum</NavLink >
-             </li>
-             <li>
-               1
-               <NavLink to='/shoelaces' activeClassName='sidebarItem_a'>Shoelaces</NavLink >
-             </li>
-             <button
-               style={{marginLeft: '50px'}}
-               onClick={() => {
-                 this.handleSwitchColor(until.getRandomColor())
-               }}
-             >换色
-             </button>
-           </ul>
-         </div>
-         <div className='app_content' style={{background: this.props.themeColor}}>
-           <div className='app_crumbsBar'>
-             {routes.map((route, index) => (
-               <Route
-                 key={index}
-                 path={route.path}
-                 exact={route.exact}
-                 component={route.sidebar}
-               />
-             ))}
-           </div>
-           {routes.map((route, index) => (
-             <Route
-               key={index}
-               path={route.path}
-               exact={route.exact}
-               component={route.component}
-             />
-           ))}
-         </div>
-       </div>
+      <Router>
+        <div className='app_page'>
+          <div className='app_sidebar'>
+            <ul>
+              <li>
+                <NavLink to='/home' activeClassName='sidebarItem_a'>Home</NavLink >
+              </li>
+              <li>
+                <NavLink to='/bubblegum' activeClassName='sidebarItem_a'>Bubblegum</NavLink >
+              </li>
+              <li>
+                <NavLink to='/shoelaces' activeClassName='sidebarItem_a'>Shoelaces</NavLink >
+              </li>
+              <button
+                style={{marginLeft: '50px'}}
+                onClick={() => {
+                  this.handleSwitchColor(until.getRandomColor())
+                }}
+              >换色
+              </button>
+            </ul>
+          </div>
+          <div className='app_content' style={{background: this.props.themeColor}}>
+            <div className='app_crumbsBar'>
+              {routes.map((route, index) => (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.sidebar}
+                />
+              ))}
+            </div>
+            <Switch>
+              {routes.map((route, index) => (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.component}
+                />
+              ))}
+            </Switch>
+          </div>
+        </div>
       </Router>
     )
   }
