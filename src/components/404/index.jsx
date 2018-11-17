@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
-import { ShakeLittle, ShakeSlow, ShakeHorizontal,Shake } from 'reshake'
+import { Link } from 'react-router-dom'
+import { Shake } from 'reshake'
 import './404.scss'
 class errorPage extends Component {
-  constructor (props){
-    super(props)
-
-  }
-
   render () {
     return (
       <div className='errorPage'>
@@ -20,8 +16,11 @@ class errorPage extends Component {
           fixed={true}
           fixedStop={false}
           freez={true}>
-          <div className= 'wrapper'>404</div>
+          <div className='wrapper'>
+            404
+          </div>
         </Shake>
+        <Link to='/'>回主页吧....</Link>
       </div>
     )
   }
