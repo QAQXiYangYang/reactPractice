@@ -76,3 +76,13 @@ html,body,#root{
   opacity: 0;
 
 }
+
+//横屏遮罩子
+@media screen and (min-aspect-ratio: 13/9){
+  html,body  { width:100%; height:100%;min-height:100vh;min-width:100vw;overflow: hidden;}
+  html.not-portrait-tips::before,html.not-portrait-tips::after,html.not-portrait-tips body::before{display: none;}
+  html::before {content: ""; position: absolute; top:-50%; left:0; height:200%; width:100%; background:#2d3132; z-index:99999; pointer-events: none; }
+  html::after {content: "为了更好的体验，请将手机竖起来";position:fixed; top:50%; left:0; height:30px; width:100%; margin-top:30px; z-index:99999; text-align:center; font-size:16px; color:#fff;  }
+  body::before  { content: ""; position:fixed; z-index:99999; height:200px; width:100px; left:50%; top:50%; margin:-160px 0 0 -50px; color:#fff; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB2CAMAAAAujEceAAAAe1BMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////NgkbwAAAAKHRSTlMAf5nVNnEQsfbh6L4XYVXuaqguSE7DJ7oKeSBDMtuPQMmUWxwEhZ/FOkyCXQAAA6ZJREFUaN7t22lzqjAUgOGDLIkRRBRZXXDt+f+/8CZcba6YIQiazu3wfmo149NC0nacU/jZEndCKrtr6dXaZ0PJuMKXY9Yg1ifYK7bqb26m2De3r1kw7N+in5l94ZBWqkunvewuDqqCp47ITu3mKcRhzeExL+IPknY0wIGljcMndiULWs0iHYrSAmTZBHmp32qKL0wZVaS/vs62044OQrUZF8tGSWLXz+RO/sjncO+CvMgHXRYqCwvF2vROLB7WXm5PL+uzt419vydKE8XaNfLEE8nDWgvqEoq3GLE27/1Oj/yDfQNVvFS18F5GaeCsGpVlfU+Zw7eLEoWdeHqXhrfv9+Lp0O7RKUU1CoR/FoDn5F+0ZgMNOiCJnsVWiusbbLH6wJ4+j8LJRqQliDxLXGa2/zwKCZdYAn9ZgrygBbUPkxfbEQUKK/Fa94N6lKoS3cHLbVQozPkjX99LtlJVoJPXUUeijd/PV3mThRp/HoWJBY2ttfk8ej5DY2utP4iqi8US0yjsxAU2jZ5txMggKk/R0jQKBDEyjsaIrDCNgo3omkOlQoyjCV+WmEYzG/FoGoUJHpbGUd83eGRkIzqiI/qzaHmxWsvnxfvRA+qi1cJ7M3rFDtHFe9FgTVpLbRSRzOhGOjsW5Svtk+HdWxChZqaPTC4Yg6h8IyQ2jUKKmBpHS77aMY0C4ZD3JtTzFWXqN5ftzZtQC9lTNIDnNhTZ/E3oBBXl8Jw35cvfhF4wfIzxh90Po5nXCNafR5+bjeiI/vdoJn8mmkNdpCI8mkX/FhhG6ZSaR8k5NY9egZhHoxEd0REd0REd0d+FMsI4+uv/Rsp/Aj2Ve1Hp//q/8FXo4OEKPZq4u+O5gQ4bI9Gjc8pXVKcmOiA9uqEoSo2iO3ENObx5AWX5vnSnA9AIMYctotMdndbHy9/2RsXLs0pOHGhROV5T9keLEEVX6IxOvdtaW4Mu7K/1Q7PwhsKe8RXE647a2W1tqkGvLZPVXuCWcC/jd+rSjjIf6s7tN/UCh65vSCYhhoEYQNUPZAe6YXHHXTzlLhXoEXHryFFbZXRV3xbajh6hczsxFKsdKo4Wiwhl2llV/aj2/L3j0/oO96Nf0B5Qv6sbyz1tDTOrzmZJEWf3s1MNQmO9Js9AmMjD8/l/cziXVePfExzW28xBtDzOW4oD97C9zSP/kz/rR7L4viu7RPzmxrJ7kJb3PfijjZJYcdGX7pXYnUujS5zJmVPWungWHYICfrg/vUeb+sa0q/YAAAAASUVORK5CYII="); background-repeat:no-repeat; background-position:center center; background-size:100px auto;}
+}
+
